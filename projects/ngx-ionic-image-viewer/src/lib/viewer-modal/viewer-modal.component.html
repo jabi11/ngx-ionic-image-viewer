@@ -1,6 +1,9 @@
 <ion-header [ngClass]="{ 'no-title': title.length <= 0 }">
   <ion-toolbar>
     <ion-buttons slot="primary">
+      <ion-button (click)="downloadClicked()" *ngIf="callbackFunction">
+        <ion-icon slot="icon-only" name="download"></ion-icon>
+      </ion-button>
       <ion-button (click)="closeModal()">
         <ion-icon slot="icon-only" name="close"></ion-icon>
       </ion-button>

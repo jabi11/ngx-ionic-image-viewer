@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output } from '@angular/core';
 import { ModalController, IonSlides } from '@ionic/angular';
 
 @Component({
@@ -18,6 +18,7 @@ export class ViewerModalComponent implements OnInit {
   @Input() text?: string = '';
   @Input() title?: string = '';
   @Input() titleSize?: string = '';
+  @Input() callbackFunction?: (args?: any) => void;
   // tslint:enable: no-inferrable-types
 
   defaultSlideOptions = {
@@ -206,5 +207,9 @@ export class ViewerModalComponent implements OnInit {
 
   closeModal() {
     this.modalController.dismiss();
+  }
+
+  downloadClicked() {
+    this.callbackFunction();
   }
 }

@@ -38,6 +38,10 @@ export class HomePage implements OnInit {
     document.body.classList.toggle('dark', this.prefersDark);
   }
 
+  public myCallbackFunction = (arg): void => {
+    console.log("callback clicked");
+  };
+
   async openViewer() {
     const modal = await this.modalController.create({
       component: ViewerModalComponent,
@@ -45,6 +49,7 @@ export class HomePage implements OnInit {
         src: this.imgUrl, // required
         title: 'Silhoutte (Programmatic)', // optional
         text: 'Photo by Mayur Gala on Unsplash', // optional
+        callbackFunction: this.myCallbackFunction,
       },
       cssClass: 'ion-img-viewer', // required
       keyboardClose: true,
