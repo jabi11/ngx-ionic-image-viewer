@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, Output } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { ModalController, IonSlides } from '@ionic/angular';
 
 @Component({
